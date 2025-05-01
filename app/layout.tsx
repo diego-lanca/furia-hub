@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/navbar";
+import { createClient } from "@/utils/supabase/server";
 
-const poppins = Poppins({
-  variable: "--poppins",
+const inter = Inter({
+  variable: "--inter",
   subsets: ["latin"],
-  weight: ["400","500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -13,18 +14,26 @@ export const metadata: Metadata = {
   description: "Projeto para processo seletivo da Furia Tech!",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="pt-br">
-      <body
-        className={`${poppins.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+
+  const supabase = await createClient();
+  const { error } = await supabase.auth.getUser();
+
+  const isAuthenticated = !error;
+
+    return (
+      <html lang="pt-br">
+        <body
+          className={`${inter.className} antialiased`}
+        >
+          {isAuthenticated && <Navbar />}
+          {children}
+        </body>
+      </html>
+    );
+  
 }
