@@ -11,3 +11,11 @@ export const logout = async () => {
 
     redirect('/login');
 }
+
+export const goToChat = () => {
+    redirect('/chat')
+}
+
+export const goToHome = () => {
+    redirect('/')
+}
