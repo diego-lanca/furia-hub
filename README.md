@@ -1,6 +1,6 @@
 # Furia Hub
 
-Furia Hub é um aplicativo web de chat em tempo real que utiliza IA para simular conversas entre fãs de e‑sports. Inspirado na paixão da comunidade, o projeto permite que usuários se conectem, conversem com outros fãs e interajam com um bot de IA chamado **Furia AI Fan**.
+Furia Hub é um aplicativo web de chat em tempo real que utiliza IA para simular conversas entre fãs de e‑sports. Inspirado na paixão da comunidade, o projeto permite que usuários se conectem, conversem e interajam com um bot de IA chamado **Furia AI Fan**.
 
 ---
 
@@ -18,7 +18,7 @@ Furia Hub é um aplicativo web de chat em tempo real que utiliza IA para simular
 * **Recurso de Chat**: Comunicação em tempo real usando Supabase Realtime Channels.
 * **Fluxo de Mensagens**: Exibição de histórico, rolagem automática e diferenciamento de mensagens do usuário, de outros usuários e do AI Fan.
 * **Componentização**: Hooks customizados (`useChat`, `useChatScroll`), componentes de UI (`Navbar`, `ChatMessageItem`), e rotas protegidas.
-* **Backend de IA**: Endpoint `/api/chat` implementado com [Groq SDK](https://www.npmjs.com/package/groq-sdk) usando o modelo `gemma2-9b-it`.
+* **Backend de IA**: Endpoint `/api/ai` implementado com [Groq SDK](https://www.npmjs.com/package/groq-sdk) usando o modelo `gemma2-9b-it`.
 
 ---
 
